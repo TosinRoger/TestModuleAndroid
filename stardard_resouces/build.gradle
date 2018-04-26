@@ -33,9 +33,9 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     // retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:2.3.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
 
     // RxJava & RxAndroid
@@ -47,7 +47,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.7.1'
 
     // anko
-    implementation "org.jetbrains.anko:anko-sdk25:$ANKO_VERSION"
+    implementation "org.jetbrains.anko:anko-sdk25:0.10.4"
 }
 
 repositories {
