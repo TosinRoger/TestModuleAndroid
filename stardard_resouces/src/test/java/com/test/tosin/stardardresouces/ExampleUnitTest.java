@@ -1,4 +1,4 @@
-package com.test.tosin.stardard_resouces;
+package com.test.tosin.stardardresouces;
 
 import org.junit.Test;
 

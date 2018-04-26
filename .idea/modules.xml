@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestModuleAndroid.iml" filepath="$PROJECT_DIR$/TestModuleAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stardard_resouces/stardard_resouces.iml" filepath="$PROJECT_DIR$/stardard_resouces/stardard_resouces.iml" />
     </modules>
   </component>
 </project>

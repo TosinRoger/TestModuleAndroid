@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
@@ -25,10 +23,37 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+
+    // RxJava & RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+
+    // anko
+    implementation "org.jetbrains.anko:anko-sdk25:$ANKO_VERSION"
 }
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
