@@ -1,8 +1,9 @@
 package com.test.tosin.stardardresouces.models
 
 import com.google.gson.annotations.*
+import java.io.Serializable
 
-class Name {
+class Name: Serializable {
 
     @SerializedName("first")
     @Expose

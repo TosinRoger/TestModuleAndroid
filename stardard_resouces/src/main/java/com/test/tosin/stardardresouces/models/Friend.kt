@@ -1,8 +1,9 @@
 package com.test.tosin.stardardresouces.models
 
 import com.google.gson.annotations.*
+import java.io.Serializable
 
-class Friend {
+class Friend: Serializable {
 
     @SerializedName("id")
     @Expose

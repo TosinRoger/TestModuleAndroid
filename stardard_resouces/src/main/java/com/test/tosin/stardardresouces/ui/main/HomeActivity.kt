@@ -1,20 +1,20 @@
 package com.test.tosin.stardardresouces.ui.main
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import com.test.tosin.stardardresouces.R
 import com.test.tosin.stardardresouces.models.Person
+import com.test.tosin.stardardresouces.ui.details.UserDetailsActivity
 import com.test.tosin.stardardresouces.ui.main.adapter.UserAdapter
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.list_user.view.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.indeterminateProgressDialog
-import org.jetbrains.anko.progressDialog
 
 class HomeActivity : AppCompatActivity(), HomeContract.HomeView {
 
@@ -46,7 +46,13 @@ class HomeActivity : AppCompatActivity(), HomeContract.HomeView {
             view.recyclerViewUsers.layoutManager = linear
             view.recyclerViewUsers.itemAnimator = DefaultItemAnimator()
 
-            val adapter = UserAdapter(list)
+            val adapter = UserAdapter(list, {
+                val intent = Intent(this@HomeActivity, UserDetailsActivity::class.java)
+                val bundle = Bundle()
+                bundle.putSerializable("USER", it)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            })
             view.recyclerViewUsers.adapter = adapter
 
             view
