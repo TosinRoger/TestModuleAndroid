@@ -3,7 +3,6 @@ package com.test.tosin.stardardresouces.models
 import com.google.gson.annotations.*
 import java.io.Serializable
 
-
 class Person: Serializable {
 
     @SerializedName("_id")

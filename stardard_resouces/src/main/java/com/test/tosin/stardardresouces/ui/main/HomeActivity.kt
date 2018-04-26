@@ -18,6 +18,8 @@ import org.jetbrains.anko.indeterminateProgressDialog
 
 class HomeActivity : AppCompatActivity(), HomeContract.HomeView {
 
+    private val RELOAD = "RELOAD"
+
     private val presenter = HomePresenter(this)
     private lateinit var dialog: ProgressDialog
 
@@ -27,8 +29,12 @@ class HomeActivity : AppCompatActivity(), HomeContract.HomeView {
         setSupportActionBar(toolbar)
 
         configView()
-        setViewRecycler(arrayListOf())
 
+        if (savedInstanceState != null && savedInstanceState.getBoolean(RELOAD, false)) {
+            presenter.requestList()
+        } else {
+            setViewRecycler(arrayListOf())
+        }
     }
 
     override fun setViewRecycler(list: List<Person>) {
@@ -83,6 +89,11 @@ class HomeActivity : AppCompatActivity(), HomeContract.HomeView {
         buttonRequestUserData.setOnClickListener {
             presenter.requestList()
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.putBoolean(RELOAD, true)
+        super.onSaveInstanceState(outState)
     }
 
 }

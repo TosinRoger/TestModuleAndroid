@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.test.tosin.stardardresouces.R
 import com.test.tosin.stardardresouces.models.Person
 import kotlinx.android.synthetic.main.activity_user_details.*
@@ -52,6 +53,9 @@ class UserDetailsActivity : AppCompatActivity() {
         textView_details_fruit.text = person.favoriteFruit
         textView_details_about.text = person.about
 
+        Glide.with(this@UserDetailsActivity)
+                .load(person.picture ?: "")
+                .into(imageView_details_photo)
     }
 
 }
